@@ -1,0 +1,15 @@
+{
+  "name": "disneyplus-clone",
+  "version": "1.0.0",
+  "description": "disney+ clone for practice",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w assets/scss/ -o assets/css/ --recursive"
+  },
+  "author": "shubham kant",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
