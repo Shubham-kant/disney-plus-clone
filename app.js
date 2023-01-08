@@ -63,10 +63,10 @@ const createSlide = () => {
 //   createSlide();
 // }
 
-setInterval(() => {
-  createSlide();
-}, 3000);
-createSlide();
+// setInterval(() => {
+//   createSlide();
+// }, 3000);
+// createSlide();
 
 
 //video card

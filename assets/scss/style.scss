@@ -177,9 +177,39 @@ body{
             font-size: 20px;
         }
         .movies-list {
-            margin: 10px;   
+            margin: 10px; 
+            position: relative;  
+            .pre-btn, .next-btn {
+                position: absolute;
+                height: 100%;
+                width: 5%;
+                z-index: 1;
+                left: 41px;
+                border: none;
+                cursor: pointer;
+                &:hover img {
+                    opacity: 1;
+                }
+                img {
+                    height: 20px;
+                    width: 15px;
+                    opacity: 0;
+                    position: absolute;
+                    top: 45%;
+                }
+            }
+            .pre-btn {
+                left: 0;
+                background: linear-gradient(to right, #0c111b 0%, #0c111b00);
+            }
+            .next-btn {
+                left: 95%;
+                background: linear-gradient(to left, #0c111b 0%, #0c111b00);
+
+            }
             .cards-container {
                 display: flex;
+                height: 250px;
                 align-items: center;
                 overflow-x: auto;
                 overflow-y: visible;
@@ -193,6 +223,14 @@ body{
                     height: 200px;
                     overflow: hidden;
                     transition: 0.5s;
+                    &:hover {
+                        transform: scale(1.1);
+                        // height: 250px;
+                        // width: 200px;
+                    }
+                    &:hover .card-body {
+                        opacity: 1;
+                    }
                     .card-img {
                         height: 100%;
                         width: 100%;
@@ -200,6 +238,7 @@ body{
                         border-radius: 2%;
                     }
                     .card-body {
+                        opacity: 0; //to make it invisible and will only be visible upon hover
                         position:absolute;   //we needed to place this text accordingly with respesct to card to show on img.
                         z-index: 1;
                         top: 80px;
@@ -224,12 +263,34 @@ body{
                         }
                         .watchlist-btn {
                             background: transparent;
-                            color: white;
+                            color: rgba(255,255,255,0.5);
                             text-transform: uppercase;
                             opacity: 0.8;
                             font-size: 10px;
                             border: none;
+                            padding: 2px;
+                            font-weight: 500;
+                            // padding: 0 0 0 2.5px;
+                            width: 100%;
+                            line-height: 15px;
+                            border-radius: 2px;
                             cursor: pointer;
+                            &:hover {
+                                color: #fff;
+                                background-color: rgba(255,255,255,0.1);
+                            }
+                            //for + sign
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                width: 35px;
+                                height: 35px;
+                                top: 89px;
+                                left: -3px;
+                                background-image: url(/assets/images/add.png);
+                                background-size: cover;
+                                transform: scale(0.2); //to make the icon small
+                            }
                         }
                     }
                 }
