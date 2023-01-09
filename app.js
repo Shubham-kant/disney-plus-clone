@@ -83,3 +83,22 @@ videoCards.forEach(videoCard => {
     videoElement.pause();
 });
 });
+
+
+let cardContainers = [...document.querySelectorAll('.cards-container')];
+let prevBtns = [...document.querySelectorAll('.pre-btn')];
+let nxtBtns = [...document.querySelectorAll('.next-btn')];
+// console.log(cardContainers,prevBtns,nxtBtns);
+
+cardContainers.forEach((cardContainer, index) => {
+  let containerDimension = cardContainer.getBoundingClientRect();
+  let containerWidth = containerDimension.width;
+
+  prevBtns[index].addEventListener('click', ()=> {
+    cardContainer.scrollLeft -= containerWidth;  
+  })
+  nxtBtns[index].addEventListener('click', ()=> {
+    cardContainer.scrollLeft += containerWidth;
+  })
+  
+});
