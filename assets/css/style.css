@@ -7,6 +7,9 @@ body {
   width: 100%;
   font-family: sans-serif;
   background-color: #0c1110; }
+  @media screen and (min-width: 320px) {
+    body {
+      width: 1000px; } }
   body .navbar {
     display: flex;
     justify-content: space-between;
@@ -16,6 +19,9 @@ body {
       body .navbar .navbar-mini-section .navbar-left-section {
         padding: 20px 15px;
         color: #ffffffcc; }
+        @media screen and (min-width: 320px) {
+          body .navbar .navbar-mini-section .navbar-left-section {
+            display: none; } }
         body .navbar .navbar-mini-section .navbar-left-section:hover {
           color: white;
           cursor: pointer; }

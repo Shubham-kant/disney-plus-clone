@@ -1,3 +1,10 @@
+$breakpoints: (
+    'xs': 0px,
+    'sm': 320px,
+    'md': 768pxpx,
+    'lg': 960px,
+    'xl': 1200px,
+);
 *{
     margin: 0;
     padding: 0;
@@ -7,6 +14,9 @@ body{
     width: 100%;
     font-family: sans-serif;
     background-color: #0c1110;
+    @media screen  and (min-width : map-get($breakpoints,'sm')) {
+        width: 1000px;
+    }
     //navbar
     .navbar {
         display: flex;
@@ -17,6 +27,9 @@ body{
             .navbar-left-section {
                 padding : 20px 15px;
                 color: #ffffffcc;
+                @media screen  and (min-width : map-get($breakpoints,'sm')) {
+                    display: none;
+                }
                 &:hover {
                     color: white;
                     cursor: pointer;
