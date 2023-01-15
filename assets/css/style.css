@@ -179,7 +179,7 @@ body {
         overflow: hidden;
         transition: 0.5s; }
         body .movie-card-container .movies-list .cards-container .card:hover {
-          transform: scale(1.1); }
+          transform: scale(1.2); }
         body .movie-card-container .movies-list .cards-container .card:hover .card-body {
           opacity: 1; }
         body .movie-card-container .movies-list .cards-container .card .card-img {
