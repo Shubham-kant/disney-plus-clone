@@ -168,7 +168,8 @@ body {
       overflow-x: auto;
       overflow-y: visible;
       width: 92%;
-      scroll-behavior: smooth; }
+      scroll-behavior: smooth;
+      overflow: hidden; }
       body .movie-card-container .movies-list .cards-container .card {
         position: relative;
         margin-right: 10px;

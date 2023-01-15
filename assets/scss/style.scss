@@ -215,6 +215,7 @@ body{
                 overflow-y: visible;
                 width: 92%;
                 scroll-behavior: smooth;
+                overflow: hidden;  //to hide scrollbar
                 .card {
                     position: relative; //for position of card body text
                     margin-right: 10px;
