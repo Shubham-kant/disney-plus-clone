@@ -1,9 +1,10 @@
 $breakpoints: (
     'xs': 0px,
     'sm': 320px,
-    'md': 768pxpx,
+    'md': 650px,
     'lg': 960px,
     'xl': 1200px,
+    'xlg': 2560px
 );
 *{
     margin: 0;
@@ -14,22 +15,33 @@ body{
     width: 100%;
     font-family: sans-serif;
     background-color: #0c1110;
+
     @media screen  and (min-width : map-get($breakpoints,'sm')) {
         width: 1000px;
+    }
+    // If screen size is 650px wide, or less
+    @media screen  and (min-width : map-get($breakpoints,'md')) {
+        width: 100%;
     }
     //navbar
     .navbar {
         display: flex;
         justify-content: space-between;
         padding: 8px 38px;
+        @media screen  and (min-width : map-get($breakpoints,'md')) {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
         .navbar-mini-section {
             display: flex;
             .navbar-left-section {
                 padding : 20px 15px;
                 color: #ffffffcc;
-                @media screen  and (min-width : map-get($breakpoints,'sm')) {
+                /* If screen size is more than 960px wide, hide the nav bar left section  */
+                @media screen  and (max-width : map-get($breakpoints,'lg')) {
                     display: none;
                 }
+
                 &:hover {
                     color: white;
                     cursor: pointer;
@@ -229,6 +241,9 @@ body{
                 width: 92%;
                 scroll-behavior: smooth;
                 overflow: hidden;  //to hide scrollbar
+                @media screen and (min-width: map-get($breakpoints,'xlg')) {                        
+                    height: 400px;
+                }
                 .card {
                     position: relative; //for position of card body text
                     margin-right: 10px;
@@ -237,6 +252,16 @@ body{
                     height: 200px;
                     overflow: hidden;
                     transition: 0.5s;
+                    // If screen size is 650px wide, or less, 
+                    @media screen  and (max-width : map-get($breakpoints,'md')) {
+                        width: 160px;
+                        min-width: 160px;
+                    }
+                    @media screen and (min-width: map-get($breakpoints,'xlg')) {                        
+                        width: 290px;
+                        min-width: 290px;
+                        height: 380px;
+                    }
                     &:hover {
                         transform: scale(1.2);
                         // height: 250px;
@@ -308,10 +333,6 @@ body{
                         }
                     }
                 }
-                //check need
-                // &:-webkit-scrollbar {
-                //     // display: none;
-                // }
             }
         }
     }

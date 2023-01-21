@@ -10,16 +10,24 @@ body {
   @media screen and (min-width: 320px) {
     body {
       width: 1000px; } }
+  @media screen and (min-width: 650px) {
+    body {
+      width: 100%; } }
   body .navbar {
     display: flex;
     justify-content: space-between;
     padding: 8px 38px; }
+    @media screen and (min-width: 650px) {
+      body .navbar {
+        padding-left: 16px;
+        padding-right: 16px; } }
     body .navbar .navbar-mini-section {
       display: flex; }
       body .navbar .navbar-mini-section .navbar-left-section {
         padding: 20px 15px;
-        color: #ffffffcc; }
-        @media screen and (min-width: 320px) {
+        color: #ffffffcc;
+        /* If screen size is more than 960px wide, hide the nav bar left section  */ }
+        @media screen and (max-width: 960px) {
           body .navbar .navbar-mini-section .navbar-left-section {
             display: none; } }
         body .navbar .navbar-mini-section .navbar-left-section:hover {
@@ -176,6 +184,9 @@ body {
       width: 92%;
       scroll-behavior: smooth;
       overflow: hidden; }
+      @media screen and (min-width: 2560px) {
+        body .movie-card-container .movies-list .cards-container {
+          height: 400px; } }
       body .movie-card-container .movies-list .cards-container .card {
         position: relative;
         margin-right: 10px;
@@ -184,6 +195,15 @@ body {
         height: 200px;
         overflow: hidden;
         transition: 0.5s; }
+        @media screen and (max-width: 650px) {
+          body .movie-card-container .movies-list .cards-container .card {
+            width: 160px;
+            min-width: 160px; } }
+        @media screen and (min-width: 2560px) {
+          body .movie-card-container .movies-list .cards-container .card {
+            width: 290px;
+            min-width: 290px;
+            height: 380px; } }
         body .movie-card-container .movies-list .cards-container .card:hover {
           transform: scale(1.2); }
         body .movie-card-container .movies-list .cards-container .card:hover .card-body {
